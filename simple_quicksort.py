@@ -2,24 +2,22 @@
 
 
 def sort(items: list, key=lambda x: x):
-    _recursive_sort(items, 0, len(items), key)
+    _recursive_sort(items, 0, len(items) - 1, key)
 
 
 def _recursive_sort(items, begin, end, key):
-    if begin >= end - 1:
+    if begin >= end:
         return
 
     partition = _partition(items, begin, end, key)
-    _recursive_sort(items, begin, partition, key)
-    _recursive_sort(items, partition, end, key)
+    _recursive_sort(items, begin, partition - 1, key)
+    _recursive_sort(items, partition + 1, end, key)
 
 
 def _partition(items, begin, end, key) -> int:
-    pivot = end - 1
     i = begin
-
     for j in range(begin, end):
-        if key(items[j]) <= key(items[pivot]):
+        if key(items[j]) <= key(items[end]):
             _swap(items, i, j)
             i += 1
     return i - 1
