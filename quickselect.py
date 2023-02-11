@@ -1,5 +1,6 @@
 """Quickselect
 
+
 Get the k smallest items from a list.
 The pivot is the last element of the selected range.
 """
@@ -8,6 +9,7 @@ The pivot is the last element of the selected range.
 def select(items: list, k: int, key=lambda x: x):
     _recursive_select(items, k, 0, len(items) - 1, key)
     return items[:k]
+
 
 def _recursive_select(items, k, begin, end, key):
     if begin >= end:
