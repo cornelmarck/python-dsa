@@ -1,4 +1,7 @@
-"""Simple quicksort with non-random partioning"""
+"""Quicksort
+
+Simple quicksort with non-random partioning
+"""
 
 
 def sort(items: list, key=lambda x: x):

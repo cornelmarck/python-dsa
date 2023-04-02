@@ -1,6 +1,5 @@
 """Quickselect
 
-
 Get the k smallest items from a list.
 The pivot is the last element of the selected range.
 """
